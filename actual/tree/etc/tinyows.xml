@@ -1,0 +1,20 @@
+<tinyows online_resource="http://127.0.0.1/cgi-bin/tinyows"
+         schema_dir="/usr/share/tinyows/schema/">
+
+<pg host="127.0.0.1" user="gisuser" password="123456789" dbname="gis" port="5432"/>
+
+<metadata name="TinyOWS Server"
+          title="TinyOWS Server - WFS-T Admin countries service" />
+
+<contact name="TinyOWS Server"
+         site="http://www.tinyows.org/"
+         email="super@gmail.com" />
+
+<layer retrievable="1"
+       writable="1"
+       ns_prefix="admin_countries"
+       ns_uri="http://www.tinyows.org/"
+       name="admin_countries"
+       title="Admin countries" />
+
+</tinyows>

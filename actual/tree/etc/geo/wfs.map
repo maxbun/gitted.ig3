@@ -1,0 +1,50 @@
+MAP
+IMAGETYPE    PNG
+EXTENT       -0.0176000000000000 -79.8512000000000057 69.0799999999999983 0.0176000000000000
+SIZE         800 800
+SHAPEPATH    "/var/lib/geo/data/"
+IMAGECOLOR   255 255 255
+#FONTSET     "/var/lib/geo/data/fonts.list"
+
+PROJECTION   
+"init=epsg:4326"
+END
+
+WEB
+    METADATA
+                "wfs_enable_request"    "*"
+                "wfs_srs"                "EPSG:4326"
+                "wfs_title"                "admin & population (WFS)"
+                "wfs_online_resource"        "http://localhost/?map=/etc/geo/wfs.map&"
+    END
+END
+
+
+
+#
+# ADMIN
+#
+LAYER
+NAME             ADMIN
+METADATA
+                  "wfs_title"               "admin_10m"
+		  "wfs_srs"		    "ESPG:4326"
+		  "gml_include_items" "all"
+		  "gml_featureid" "ADMIN"
+		  "wfs_enable_request" "*"
+END
+DATA       "ne_10m_admin_0_countries.shp"
+STATUS             ON
+TYPE             POLYGON
+
+CLASS
+	NAME "ADMIN"
+        STYLE
+                COLOR           255 204 153
+                OUTLINECOLOR    255 255 255
+                WIDTH           1
+        END
+END
+
+END
+END
