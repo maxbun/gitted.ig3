@@ -30,7 +30,7 @@ CONNECTIONTYPE   OGR
 METADATA
                   "wms_title"               "admin_10m"
 END
-CONNECTION       "admin/ne_10m_admin_0_countries.shp"
+CONNECTION       "ne_10m_admin_0_countries.shp"
 STATUS             ON
 TYPE             POLYGON
 

@@ -16,7 +16,7 @@ NAME MS
 	        "wms_enable_request"    "*"
 			"wms_srs"		"EPSG:4326"
 			"wms_title"		"mymap"
-			"wms_online_resource"	"http://localhost/map/?map=/etc/geo/map.map&"
+			"wms_online_resource"	"http://localhost/?map=/etc/geo/map.map&"
 	    END
 	END
 
@@ -405,17 +405,17 @@ NAME MS
 		OPACITY     50
 	END
 	
-	LAYER
-	    NAME    firone
-	    METADATA
-	        "wms_title"     "firone"
-	    END
-	    DATA    "data/Province de Firone_georef.tif"
-	    STATUS  ON
-	    TYPE    RASTER
-		PROCESSING    "RESAMPLE=NEAREST"
-		OPACITY     50
-	END
+	#LAYER
+#	    NAME    firone
+#	    METADATA
+#	        "wms_title"     "firone"
+#	    END
+#	    DATA    "data/Province de Firone_georef.tif"
+#	    STATUS  ON
+#	    TYPE    RASTER
+#		PROCESSING    "RESAMPLE=NEAREST"
+#		OPACITY     50
+#	END
 
 	LAYER
 		NAME          background

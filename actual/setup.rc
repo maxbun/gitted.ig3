@@ -1,1 +1,5 @@
-sysconf_require_packages nano openssh-server mapserver-bin
+apt-get update
+sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi nginx
+chmod +x /etc/init.d/mapserv
+service mapserv start
+/etc/init.d/nginx start
