@@ -1,7 +1,9 @@
-<tinyows online_resource="http://127.0.0.1/tinyows"
+<tinyows online_resource="http://127.0.0.1/cgi-bin/tinyows/"
          schema_dir="/usr/local/share/tinyows/schema/"
 	 log="/tmp/tinylog.log"
-	 log_level="15">
+	 log_level="15"
+	 check_valid_geom="0"
+	 wfs_default_version="1.0.0">
 
 <pg host="127.0.0.1" user="gisuser" password="123456789" dbname="gis" port="5432"/>
 
@@ -14,9 +16,9 @@
 
 <layer retrievable="1"
        writable="1"
-       ns_prefix="admin_countries"
-       ns_uri="http://127.0.0.1/"
-       server="http://127.0.0.1/"
+       ns_prefix="admincountries"
+       ns_uri="http://www.tinyows.org/"
+  
        name="admin_countries"
        schema="public"
        table="admin_countries"
