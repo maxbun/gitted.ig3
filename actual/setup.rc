@@ -1,5 +1,8 @@
 apt-get update
-sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi nginx postgresql postgresql-contrib postgis* libxml2-dev libpq-dev libfcgi-dev
+sysconf_require_packages nano openssh-server mapserver-bin cgi-mapserver spawn-fcgi nginx  postgresql postgresql-contrib postgis* libxml2-dev libpq-dev libfcgi-dev mapcache-cgi mapcache-tools
+#cmake libjpeg-dev libcurl4-nss-dev libapr1-dev
+
+
 chmod +x /etc/init.d/mapserv
 service mapserv start
 /etc/init.d/nginx start
@@ -22,5 +25,13 @@ make
 sudo make install
 cp tinyows /usr/lib/cgi-bin/
 
+/usr/lib/cgi-bin/tinyows --check
+/etc/init.d/spawn-cgi-tinyows start
+
+
+
+export MAPCACHE_CONFIG_FILE=/etc/mapcache.xml 
+
+/etc/init.d/mapcache start
 
 
