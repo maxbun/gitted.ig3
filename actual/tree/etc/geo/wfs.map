@@ -15,7 +15,7 @@ WEB
                 "wfs_enable_request"    "*"
                 "wfs_srs"                "EPSG:4326"
                 "wfs_title"                "admin & population (WFS)"
-                "wfs_online_resource"        "http://localhost/?map=/etc/geo/wfs.map&"
+                "wfs_online_resource"        "http://localhost/map/?map=/etc/geo/wfs.map&"
     END
 END
 

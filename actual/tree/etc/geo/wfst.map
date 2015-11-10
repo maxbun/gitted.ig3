@@ -30,7 +30,7 @@ MAP
 
                        "wfs_title"                "admin & population"
 
-                       "wfs_online_resource"        "http://localhost/?map=/etc/geo/wfst.map"
+                       "wfs_online_resource"        "http://localhost/map/?map=/etc/geo/wfst.map"
 
                        "wfs_enable_request" "*"
 

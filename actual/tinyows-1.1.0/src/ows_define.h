@@ -29,7 +29,7 @@
 #endif
 
 #define TINYOWS_VERSION             "1.1.0"
-#define TINYOWS_FCGI                0
+#define TINYOWS_FCGI                1
 
 #define OWS_CONFIG_FILE_PATH        "/etc/tinyows.xml"
 

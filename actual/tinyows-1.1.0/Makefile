@@ -12,8 +12,8 @@ XML2_LIB=-lxml2
 XMLFLAGS=$(XML2_INC) $(XML2_LIB)
 
 # fast-cgi ... optional
-FCGI_INC=-I/usr/include/fastcgi
-FCGI_LIB=
+FCGI_INC=
+FCGI_LIB= -lfcgi
 FCGIFLAGS=$(FCGI_INC) $(FCGI_LIB)
 
 # install path

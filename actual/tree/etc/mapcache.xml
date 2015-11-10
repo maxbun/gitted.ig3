@@ -1,57 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<mapcache>
+    <metadata>
+     <title>map service</title>
+     <abstract>Contains various cached maps</abstract>
+    </metadata>
 
-<mapcache mode="combined_mirror">
-   <cache name="disk" type="disk">
-      <base>/tmp</base>
-      <symlink_blank/>
-   </cache>
+    <cache name="disk" type="disk">
+     <base>/tmp/</base>
+    </cache>
 
-   <source name="vmap0" type="wms">
-      <getmap>
-         <params>
-            <FORMAT>image/jpeg</FORMAT>
-         </params>
-      </getmap>
+   <source name="admin_countries" type="wms">
+     <getmap>
+       <params>
+         <FORMAT>image/JPEG</FORMAT>
+         <LAYERS>ADMIN</LAYERS>
+         <MAP>/etc/geo/wms.map</MAP>
+       </params>
+     </getmap>
+     <http>
+       <url>http://localhost/map/?</url>
+     </http>
+    </source>
 
-      <http>
-         <url>http://localhost/?map=/etc/geo/wms.map&amp;</url>
-      </http>
-   </source>
-
-   <tileset name="mirror">
-      <source>vmap0</source>
-      <cache>disk</cache>
-      <grid>WGS84</grid>
-      <grid>g</grid>
-      <format>JPEG</format>
-      <metatile>5 5</metatile>
-      <metabuffer>10</metabuffer>
-      <expires>3600</expires>
-   </tileset>
+   <source name="zelda" type="wms">
+     <getmap>
+       <params>
+         <FORMAT>image/JPEG</FORMAT>
+         <LAYERS>MS</LAYERS>
+         <MAP>/etc/geo/map.map</MAP>
+       </params>
+     </getmap>
+     <http>
+       <url>http://localhost/map/?</url>
+     </http>
+    </source>
 
 
-   <default_format>JPEG</default_format>
-<!--
-   <service type="wms" enabled="true">
-      <full_wms>assemble</full_wms>
-      <resample_mode>bilinear</resample_mode>
-      <format>JPEG</format>
-      <maxsize>4096</maxsize>
-      <forwarding_rule name="catch all">
-            <http>
-               <url>http://localhost/?map=/etc/geo/wms.map&amp;</url>
-            </http>
-      </forwarding_rule>
-   </service>
--->
-   <service type="wmts" enabled="true"/>
-   <service type="tms" enabled="true"/>
-   <service type="kml" enabled="true"/>
-   <service type="gmaps" enabled="true"/>
-   <service type="ve" enabled="true"/>
-   <service type="demo" enabled="true"/>
+    <format name="JPEG_FAST" type="JPEG">
+     <compression>fast</compression>
+     <colors>256</colors>
+    </format>
 
-   <errors>report</errors>
-   <lock_dir>/tmp</lock_dir>
+    <tileset name="admin_countries">
+     <source>admin_countries</source>
+     <cache>disk</cache>
+     <grid>WGS84</grid>
+	<grid>g</grid>
+     <format>JPEG_FAST</format>
+     <metatile>5 5</metatile>
+     <metabuffer>20</metabuffer>
+     <expires>3600</expires>
+    </tileset>
+
+    <tileset name="zelda">
+     <source>zelda</source>
+     <cache>disk</cache>
+     <grid>WGS84</grid>
+	<grid>g</grid>
+     <format>JPEG_FAST</format>
+     <metatile>5 5</metatile>
+     <metabuffer>20</metabuffer>
+     <expires>3600</expires>
+    </tileset>
+
+    <default_format>JPEG_FAST</default_format>
+
+    <service type="wms" enabled="true">
+     <full_wms>assemble</full_wms>
+     <resample_mode>bilinear</resample_mode>
+     <format>JPEG_FAST</format>
+     <maxsize>4096</maxsize>
+    </service>
+    <service type="wmts" enabled="true"/>
+    <service type="tms" enabled="true"/>
+    <service type="kml" enabled="true"/>
+    <service type="gmaps" enabled="true"/>
+    <service type="ve" enabled="true"/>
+    <service type="demo" enabled="true"/>
+
+    <errors>report</errors>
+    <lock_dir>/tmp/</lock_dir>
+    <log_level>debug</log_level>
 
 </mapcache>

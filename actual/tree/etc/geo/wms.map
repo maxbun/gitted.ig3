@@ -15,7 +15,7 @@ WEB
                 "wms_enable_request"    "*"
                 "wms_srs"                "EPSG:4326"
                 "wms_title"                "admin & population"
-                "wms_online_resource"        "http://localhost/?map=/etc/geo/wms.map&"
+                "wms_online_resource"        "http://localhost/map/?map=/etc/geo/wms.map&"
     END
 END
 

@@ -9,8 +9,8 @@ service mapserv start
 su -c "createuser --superuser gisuser" postgres
 su -c "createdb -E LATIN1 -O gisuser gis" postgres
 
-su postgres
-echo "ALTER USER gisuser WITH PASSWORD '123456789';" | psql -d gis
+
+echo "ALTER USER gisuser WITH PASSWORD '123456789';" | sudo -u postgres psql
 export PGPASSWORD='123456789'
 #psql -h 127.0.0.1 -U gisuser gis
 echo "CREATE EXTENSION postgis;" | psql -h 127.0.0.1 -U gisuser gis
