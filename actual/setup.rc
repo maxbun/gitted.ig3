@@ -26,12 +26,10 @@ sudo make install
 cp tinyows /usr/lib/cgi-bin/
 
 /usr/lib/cgi-bin/tinyows --check
-/etc/init.d/spawn-cgi-tinyows start
-
-
 
 export MAPCACHE_CONFIG_FILE=/etc/mapcache.xml 
 
 /etc/init.d/mapcache start
+/etc/init.d/spawn-fcgi-tinyows start
 
-
+aptitude install qgis
