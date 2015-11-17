@@ -1,0 +1,8 @@
+<OGRVRTDataSource>
+	<OGRVRTWarpedLayer>
+	    <OGRVRTLayer name="parcs_naturels_regionaux">
+         		<SrcDataSource relativeToVRT="1">shp/parcs_naturels_regionaux.shp</SrcDataSource>
+      	    </OGRVRTLayer>
+	<TargetSRS>EPSG:2154</TargetSRS>
+	</OGRVRTWarpedLayer>
+</OGRVRTDataSource>

@@ -1,0 +1,10 @@
+<OGRVRTDataSource>
+    <OGRVRTLayer name="parcs_naturels_regionaux_balade_a_velo_2">
+        <SrcDataSource relativeToVRT="1">parcs-naturels-regionaux.lonlat.vrt</SrcDataSource>
+	<SrcLayer>parcs_naturels_regionaux</SrcLayer>
+        <GeometryType>wkbPoint</GeometryType>
+        <LayerSRS>WGS84</LayerSRS>
+        <GeometryField encoding="PointFromColumns" x="long" y="lat"/>
+	<SrcSQL>SELECT * FROM parcs_naturels_regionaux WHERE categorie='balades' AND theme='A vélo'</SrcSQL>
+    </OGRVRTLayer>
+</OGRVRTDataSource>
