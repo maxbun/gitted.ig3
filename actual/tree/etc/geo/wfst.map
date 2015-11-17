@@ -11,7 +11,7 @@ MAP
    IMAGECOLOR   255 255 255
 
    #FONTSET     "/var/lib/geo/data/fonts.list"
-
+TRANSPARENT TRUE
    PROJECTION
 
        "init=epsg:4326"
@@ -26,7 +26,7 @@ MAP
 
                        "tinyows_onlineresource" "127.0.0.1/tinyows.fcgi"
 
-                       "wfs_srs"                "EPSG:4326"
+                       "wfs_srs"                "EPSG:4326 EPSG:3857"
 
                        "wfs_title"                "admin & population"
 
@@ -60,7 +60,7 @@ LAYER
 
                          "wfs_title"               "admin_ctr"
 
-                       "wfs_srs"           "EPSG:4326" ## REQUIRED
+                       "wfs_srs"           "EPSG:4326 EPSG:3857" ## REQUIRED
 
                        "gml_include_items" "all" ## Optional (serves all attributes for layer)
 

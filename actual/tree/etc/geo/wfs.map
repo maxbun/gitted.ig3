@@ -5,7 +5,7 @@ SIZE         800 800
 SHAPEPATH    "/var/lib/geo/data/"
 IMAGECOLOR   255 255 255
 #FONTSET     "/var/lib/geo/data/fonts.list"
-
+TRANSPARENT TRUE
 PROJECTION   
 "init=epsg:4326"
 END
@@ -13,7 +13,7 @@ END
 WEB
     METADATA
                 "wfs_enable_request"    "*"
-                "wfs_srs"                "EPSG:4326"
+                "wfs_srs"                "EPSG:4326 EPSG:3857"
                 "wfs_title"                "admin & population (WFS)"
                 "wfs_online_resource"        "http://localhost/map/?map=/etc/geo/wfs.map&"
     END
@@ -28,7 +28,7 @@ LAYER
 NAME             ADMIN
 METADATA
                   "wfs_title"               "admin_10m"
-		  "wfs_srs"		    "ESPG:4326"
+		  "wfs_srs"		    "ESPG:4326 EPSG:3857"
 		  "gml_include_items" "all"
 		  "gml_featureid" "ADMIN"
 		  "wfs_enable_request" "*"

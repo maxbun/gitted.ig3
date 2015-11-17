@@ -11,7 +11,7 @@
    <source name="admin_countries" type="wms">
      <getmap>
        <params>
-         <FORMAT>image/JPEG</FORMAT>
+         <FORMAT>image/PNG</FORMAT>
          <LAYERS>ADMIN</LAYERS>
          <MAP>/etc/geo/wms.map</MAP>
        </params>
@@ -24,7 +24,7 @@
    <source name="zelda" type="wms">
      <getmap>
        <params>
-         <FORMAT>image/JPEG</FORMAT>
+         <FORMAT>image/PNG</FORMAT>
          <LAYERS>MS</LAYERS>
          <MAP>/etc/geo/map.map</MAP>
        </params>
@@ -35,17 +35,15 @@
     </source>
 
 
-    <format name="JPEG_FAST" type="JPEG">
-     <compression>fast</compression>
-     <colors>256</colors>
-    </format>
+
 
     <tileset name="admin_countries">
      <source>admin_countries</source>
      <cache>disk</cache>
      <grid>WGS84</grid>
-	<grid>g</grid>
-     <format>JPEG_FAST</format>
+     <grid>GoogleMapsCompatible</grid>
+	
+     <format>PNG</format>
      <metatile>5 5</metatile>
      <metabuffer>20</metabuffer>
      <expires>3600</expires>
@@ -55,19 +53,19 @@
      <source>zelda</source>
      <cache>disk</cache>
      <grid>WGS84</grid>
-	<grid>g</grid>
-     <format>JPEG_FAST</format>
+     <grid>GoogleMapsCompatible</grid>
+     <format>PNG</format>
      <metatile>5 5</metatile>
      <metabuffer>20</metabuffer>
      <expires>3600</expires>
     </tileset>
 
-    <default_format>JPEG_FAST</default_format>
+    <default_format>PNG</default_format>
 
     <service type="wms" enabled="true">
      <full_wms>assemble</full_wms>
      <resample_mode>bilinear</resample_mode>
-     <format>JPEG_FAST</format>
+     <format>PNG</format>
      <maxsize>4096</maxsize>
     </service>
     <service type="wmts" enabled="true"/>
